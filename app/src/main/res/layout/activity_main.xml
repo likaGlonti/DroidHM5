@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/labelStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Statistics" />
+
+    <TextView
+        android:id="@+id/meanRunning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/labelStatistics"
+        tools:text="running distance" />
+
+    <TextView
+        android:id="@+id/meanSwimming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/meanRunning"
+        tools:text="swimming distance" />
+
+    <TextView
+        android:id="@+id/meanCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/meanSwimming"
+        tools:text="calories taken" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sum"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/run_distance_sum_bkg"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/runningDistance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meanCalories"
+        tools:text="sum" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/runningDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/swimmingDistance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <EditText
+            android:id="@+id/run"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/running_distance" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/swimmingDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/caloriesLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/runningDistance">
+
+        <EditText
+            android:id="@+id/swim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/swimming_distance" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/caloriesLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swimmingDistance">
+
+        <EditText
+            android:id="@+id/calories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/calories_taken" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/calculate"
+        android:src="@drawable/ic_calculate"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caloriesLabel"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

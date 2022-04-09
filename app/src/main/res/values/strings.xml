@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DroidHM5</string>
+    <string name="running_distance">RUNNING DISTANCE</string>
+    <string name="swimming_distance">SWIMMING DISTANCE</string>
+    <string name="calories_taken">CALORIES TAKEN</string>
+    <string name="ran_distance_mean">ran distance %s</string>
+    <string name="swam_distance_mean">swam distance %s</string>
+    <string name="calories_taken_mean">calories taken %s</string>
+    <string name="calculate">Calculate</string>
+</resources>
